@@ -1,0 +1,16 @@
+
+paths:
+  input_dir: "."
+  output_dir: "output"
+  log_dir: "logs"
+  manifest: "manifest.json"
+  summary: "run_summary.json"
+
+cleaning:
+  remove_empty_rows: true
+  trim_string_values: true
+  remove_duplicates: false
+
+thresholds: {}
+
+mappings: {}
