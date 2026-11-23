@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 from typing import Any
+
 def load_config(config_path: str | Path = "config.json") -> dict:
     """
     Load column mappings and data type configurations from JSON.
@@ -16,6 +17,7 @@ def load_config(config_path: str | Path = "config.json") -> dict:
 
     with path.open("r", encoding="utf-8") as file:
         return json.load(file)
+    
 def standardize_columns(
     rows: list[dict[str, Any]],
     mapping: dict[str, str]
@@ -38,6 +40,7 @@ def standardize_columns(
             standardized_row[new_column] = value
         standardized_rows.append(standardized_row)
     return standardized_rows
+
 def convert_data_types(
     rows: list[dict[str, Any]],
     type_mapping: dict[str, str]
@@ -67,6 +70,7 @@ def convert_data_types(
                 )
         converted_rows.append(converted_row)
     return converted_rows
+
 def calculate_order_totals(
     rows: list[dict[str, Any]]
 ) -> dict[str, float]:
